@@ -33,6 +33,7 @@ public class U02aRectanglesPoints {
   public static Rectangle jumpRight(Rectangle rec) {
     int newX = rec.x + rec.width;
     int newY = rec.y;
+    return new Rectangle(newX, newY, rec.width, rec.height);
   }
 
   /**
@@ -52,7 +53,11 @@ public class U02aRectanglesPoints {
    *         rec's y
    *         plus rec's height.
    */
-  // TODO
+  public static Rectangle jumpDown(Rectangle rec) {
+    int newX = rec.x;
+    int newY = rec.y + rec.height;
+    return new Rectangle(newX, newY, rec.width, rec.height);
+  }
 
   /**
    * jumpLeft(Rectangle rec)
@@ -71,7 +76,11 @@ public class U02aRectanglesPoints {
    *         rec's x
    *         minus rec's width.
    */
-  // TODO
+  public static Rectangle jumpLeft(Rectangle rec) {
+    int newX = rec.x - rec.width;
+    int newY = rec.y;
+    return new Rectangle(newX, newY, rec.width, rec.height);
+  }
 
   /**
    * jumpUp(Rectangle rec)
@@ -90,7 +99,11 @@ public class U02aRectanglesPoints {
    *         rec's y
    *         minus rec's height.
    */
-  // TODO
+  public static Rectangle jumpUp(Rectangle rec) {
+    int newX = rec.x;
+    int newY = rec.y - rec.height;
+    return new Rectangle(newX, newY, rec.width, rec.height);
+  }
 
   /**
    * doubleSize(Rectangle rec)
@@ -107,7 +120,11 @@ public class U02aRectanglesPoints {
    *         object with the same x and y coordinates, but with a width equal to
    *         rec's width * 2 and a height equal to rec's height * 2.
    */
-  // TODO
+  public static Rectangle doubleSize(Rectangle rec) {
+    int newWidth = rec.width * 2;
+    int newHeight = rec.height * 2;
+    return new Rectangle(rec.x, rec.y, newWidth, newHeight);
+  }
 
   /**
    * growFixed(Rectangle rec, int amount)
@@ -127,7 +144,11 @@ public class U02aRectanglesPoints {
    *         width equal to (rec.width + amount) and a
    *         height equal to (rec.height + amount).
    */
-  // TODO
+  public static Rectangle growFixed(Rectangle rec, int amount) {
+    int newWidth = rec.width + amount;
+    int newHeight = rec.height + amount;
+    return new Rectangle(rec.x, rec.y, newWidth, newHeight);
+  }
 
   /**
    * isTouching(Point p1, Point p2, double minimumDistance)
@@ -146,6 +167,10 @@ public class U02aRectanglesPoints {
    *         non-negative.
    *         Postconditions: p1 and p2 have not been changed.
    */
+  public static boolean isTouching(Point p1, Point p2, double minimumDistance) {
+    double distance = p1.distance(p2);
+    return distance <= minimumDistance;
+  }
 
   /**
    * findMidpoint(Point p1, Point p2)
@@ -163,7 +188,11 @@ public class U02aRectanglesPoints {
    *         a new Point with x at p1.x + p2.x / 2 and y at p1.y + p2.y / 2.
    *         For example, the midpoint of (3,3) and (4,4) is (3.5, 3.5)
    */
-  // TODO
+  public static Point2D.Double findMidpoint(Point p1, Point p2) {
+    double midX = (p1.x + p2.x) / 2.0;
+    double midY = (p1.y + p2.y) / 2.0;
+    return new Point2D.Double(midX, midY);
+  }
 
   public static void main(String[] args) {
      // Check out the Rectangle class in the Java API:
