@@ -1,352 +1,354 @@
-import java.awt.geom.Point2D;
-import java.util.Scanner;
-import java.awt.Rectangle;
-import java.awt.Point;
-public class U02aRectanglesPoints {
-  // Check out the Rectangle class in the Java API:
+// Do I still need this file???
 
-  // https://docs.oracle.com/javase/7/docs/api/index.html?java/awt/Rectangle.html
+// import java.awt.geom.Point2D;
+// import java.util.Scanner;
+// import java.awt.Rectangle;
+// import java.awt.Point;
+// public class U02aRectanglesPoints {
+//   // Check out the Rectangle class in the Java API:
 
-  // You will create ONE class with:
-  // - 6 methods that work with Rectangles
-  // - 2 methods that work with Points
-  // - public static void main() app that contains code for the following 5
-  // exercises.
+//   // https://docs.oracle.com/javase/7/docs/api/index.html?java/awt/Rectangle.html
 
-  /**
-   * jumpRight(Rectangle rec)
-   * 
-   * Looks at Rectangle rec and returns a new Rectangle that is located
-   * rec's width to the right of rec.
-   *
-   * @param rec The original Rectangle to be referenced.
-   * @return A new Rectangle object shifted to the right.
-   * 
-   *         Preconditions: rec is a rectangle object that is not null. rec has a
-   *         width greater than 0.
-   *         Postconditions: rec has not been changed. The method returns a new
-   *         Rectangle
-   *         object with the same y-location but with an x-location that equals
-   *         rec's x
-   *         plus rec's width.
-   */
-  public static Rectangle jumpRight(Rectangle rec) {
-    int newX = rec.x + rec.width;
-    int newY = rec.y;
-    return new Rectangle(newX, newY, rec.width, rec.height);
-  }
+//   // You will create ONE class with:
+//   // - 6 methods that work with Rectangles
+//   // - 2 methods that work with Points
+//   // - public static void main() app that contains code for the following 5
+//   // exercises.
 
-  /**
-   * jumpDown(Rectangle rec)
-   * 
-   * Looks at Rectangle rec and returns a new Rectangle that is located
-   * rec's height below rec.
-   *
-   * @param rec The original Rectangle to be referenced.
-   * @return A new Rectangle object shifted downward.
-   * 
-   *         Preconditions: rec is a rectangle object that is not null. rec has a
-   *         height greater than 0.
-   *         Postconditions: rec has not been changed. The method returns a new
-   *         Rectangle
-   *         object with the same x-location but with a y-location that equals
-   *         rec's y
-   *         plus rec's height.
-   */
-  public static Rectangle jumpDown(Rectangle rec) {
-    int newX = rec.x;
-    int newY = rec.y + rec.height;
-    return new Rectangle(newX, newY, rec.width, rec.height);
-  }
+//   /**
+//    * jumpRight(Rectangle rec)
+//    * 
+//    * Looks at Rectangle rec and returns a new Rectangle that is located
+//    * rec's width to the right of rec.
+//    *
+//    * @param rec The original Rectangle to be referenced.
+//    * @return A new Rectangle object shifted to the right.
+//    * 
+//    *         Preconditions: rec is a rectangle object that is not null. rec has a
+//    *         width greater than 0.
+//    *         Postconditions: rec has not been changed. The method returns a new
+//    *         Rectangle
+//    *         object with the same y-location but with an x-location that equals
+//    *         rec's x
+//    *         plus rec's width.
+//    */
+//   public static Rectangle jumpRight(Rectangle rec) {
+//     int newX = rec.x + rec.width;
+//     int newY = rec.y;
+//     return new Rectangle(newX, newY, rec.width, rec.height);
+//   }
 
-  /**
-   * jumpLeft(Rectangle rec)
-   * 
-   * Looks at Rectangle rec and returns a new Rectangle that is located
-   * rec's width to the left of rec.
-   *
-   * @param rec The original Rectangle to be referenced.
-   * @return A new Rectangle object shifted to the left.
-   * 
-   *         Preconditions: rec is a rectangle object that is not null. rec has a
-   *         width greater than 0.
-   *         Postconditions: rec has not been changed. The method returns a new
-   *         Rectangle
-   *         object with the same y-location but with an x-location that equals
-   *         rec's x
-   *         minus rec's width.
-   */
-  public static Rectangle jumpLeft(Rectangle rec) {
-    int newX = rec.x - rec.width;
-    int newY = rec.y;
-    return new Rectangle(newX, newY, rec.width, rec.height);
-  }
+//   /**
+//    * jumpDown(Rectangle rec)
+//    * 
+//    * Looks at Rectangle rec and returns a new Rectangle that is located
+//    * rec's height below rec.
+//    *
+//    * @param rec The original Rectangle to be referenced.
+//    * @return A new Rectangle object shifted downward.
+//    * 
+//    *         Preconditions: rec is a rectangle object that is not null. rec has a
+//    *         height greater than 0.
+//    *         Postconditions: rec has not been changed. The method returns a new
+//    *         Rectangle
+//    *         object with the same x-location but with a y-location that equals
+//    *         rec's y
+//    *         plus rec's height.
+//    */
+//   public static Rectangle jumpDown(Rectangle rec) {
+//     int newX = rec.x;
+//     int newY = rec.y + rec.height;
+//     return new Rectangle(newX, newY, rec.width, rec.height);
+//   }
 
-  /**
-   * jumpUp(Rectangle rec)
-   * 
-   * Looks at Rectangle rec and returns a new Rectangle that is located
-   * rec's height above rec.
-   *
-   * @param rec The original Rectangle to be referenced.
-   * @return A new Rectangle object shifted upward.
-   * 
-   *         Preconditions: rec is a rectangle object that is not null. rec has a
-   *         height greater than 0.
-   *         Postconditions: rec has not been changed. The method returns a new
-   *         Rectangle
-   *         object with the same x-location but with a y-location that equals
-   *         rec's y
-   *         minus rec's height.
-   */
-  public static Rectangle jumpUp(Rectangle rec) {
-    int newX = rec.x;
-    int newY = rec.y - rec.height;
-    return new Rectangle(newX, newY, rec.width, rec.height);
-  }
+//   /**
+//    * jumpLeft(Rectangle rec)
+//    * 
+//    * Looks at Rectangle rec and returns a new Rectangle that is located
+//    * rec's width to the left of rec.
+//    *
+//    * @param rec The original Rectangle to be referenced.
+//    * @return A new Rectangle object shifted to the left.
+//    * 
+//    *         Preconditions: rec is a rectangle object that is not null. rec has a
+//    *         width greater than 0.
+//    *         Postconditions: rec has not been changed. The method returns a new
+//    *         Rectangle
+//    *         object with the same y-location but with an x-location that equals
+//    *         rec's x
+//    *         minus rec's width.
+//    */
+//   public static Rectangle jumpLeft(Rectangle rec) {
+//     int newX = rec.x - rec.width;
+//     int newY = rec.y;
+//     return new Rectangle(newX, newY, rec.width, rec.height);
+//   }
 
-  /**
-   * doubleSize(Rectangle rec)
-   * 
-   * Looks at Rectangle rec and returns a new Rectangle that has twice
-   * the width and twice the height of rec.
-   *
-   * @param rec The original Rectangle to be referenced.
-   * @return A new Rectangle object with doubled dimensions.
-   * 
-   *         Preconditions: rec is a rectangle object that is not null.
-   *         Postconditions: rec has not been changed. The method returns a new
-   *         Rectangle
-   *         object with the same x and y coordinates, but with a width equal to
-   *         rec's width * 2 and a height equal to rec's height * 2.
-   */
-  public static Rectangle doubleSize(Rectangle rec) {
-    int newWidth = rec.width * 2;
-    int newHeight = rec.height * 2;
-    return new Rectangle(rec.x, rec.y, newWidth, newHeight);
-  }
+//   /**
+//    * jumpUp(Rectangle rec)
+//    * 
+//    * Looks at Rectangle rec and returns a new Rectangle that is located
+//    * rec's height above rec.
+//    *
+//    * @param rec The original Rectangle to be referenced.
+//    * @return A new Rectangle object shifted upward.
+//    * 
+//    *         Preconditions: rec is a rectangle object that is not null. rec has a
+//    *         height greater than 0.
+//    *         Postconditions: rec has not been changed. The method returns a new
+//    *         Rectangle
+//    *         object with the same x-location but with a y-location that equals
+//    *         rec's y
+//    *         minus rec's height.
+//    */
+//   public static Rectangle jumpUp(Rectangle rec) {
+//     int newX = rec.x;
+//     int newY = rec.y - rec.height;
+//     return new Rectangle(newX, newY, rec.width, rec.height);
+//   }
 
-  /**
-   * growFixed(Rectangle rec, int amount)
-   * 
-   * Looks at Rectangle rec and returns a new Rectangle that is at the
-   * same x and y location, but with dimensions increased by the specified amount.
-   *
-   * @param rec    The original Rectangle to be referenced.
-   * @param amount The integer amount to be added to both width and height.
-   * @return A new Rectangle object with increased dimensions.
-   * 
-   *         Preconditions: rec is a rectangle object that is not null.
-   *         amount is a non-negative integer.
-   *         Postconditions: rec has not been changed. The method returns a new
-   *         Rectangle
-   *         object with the same (x, y) coordinates, but with a
-   *         width equal to (rec.width + amount) and a
-   *         height equal to (rec.height + amount).
-   */
-  public static Rectangle growFixed(Rectangle rec, int amount) {
-    int newWidth = rec.width + amount;
-    int newHeight = rec.height + amount;
-    return new Rectangle(rec.x, rec.y, newWidth, newHeight);
-  }
+//   /**
+//    * doubleSize(Rectangle rec)
+//    * 
+//    * Looks at Rectangle rec and returns a new Rectangle that has twice
+//    * the width and twice the height of rec.
+//    *
+//    * @param rec The original Rectangle to be referenced.
+//    * @return A new Rectangle object with doubled dimensions.
+//    * 
+//    *         Preconditions: rec is a rectangle object that is not null.
+//    *         Postconditions: rec has not been changed. The method returns a new
+//    *         Rectangle
+//    *         object with the same x and y coordinates, but with a width equal to
+//    *         rec's width * 2 and a height equal to rec's height * 2.
+//    */
+//   public static Rectangle doubleSize(Rectangle rec) {
+//     int newWidth = rec.width * 2;
+//     int newHeight = rec.height * 2;
+//     return new Rectangle(rec.x, rec.y, newWidth, newHeight);
+//   }
 
-  /**
-   * isTouching(Point p1, Point p2, double minimumDistance)
-   * 
-   * Determines if two points are close enough to be considered "touching"
-   * based on a specified threshold.
-   *
-   * @param p1              The first Point object.
-   * @param p2              The second Point object.
-   * @param minimumDistance The maximum distance allowed for the points to be
-   *                        "touching."
-   * @return true if the distance between p1 and p2 is less than or equal to
-   *         minimumDistance; false otherwise.
-   * 
-   *         Preconditions: p1 and p2 are not null. minimumDistance is
-   *         non-negative.
-   *         Postconditions: p1 and p2 have not been changed.
-   */
-  public static boolean isTouching(Point p1, Point p2, double minimumDistance) {
-    double distance = p1.distance(p2);
-    return distance <= minimumDistance;
-  }
+//   /**
+//    * growFixed(Rectangle rec, int amount)
+//    * 
+//    * Looks at Rectangle rec and returns a new Rectangle that is at the
+//    * same x and y location, but with dimensions increased by the specified amount.
+//    *
+//    * @param rec    The original Rectangle to be referenced.
+//    * @param amount The integer amount to be added to both width and height.
+//    * @return A new Rectangle object with increased dimensions.
+//    * 
+//    *         Preconditions: rec is a rectangle object that is not null.
+//    *         amount is a non-negative integer.
+//    *         Postconditions: rec has not been changed. The method returns a new
+//    *         Rectangle
+//    *         object with the same (x, y) coordinates, but with a
+//    *         width equal to (rec.width + amount) and a
+//    *         height equal to (rec.height + amount).
+//    */
+//   public static Rectangle growFixed(Rectangle rec, int amount) {
+//     int newWidth = rec.width + amount;
+//     int newHeight = rec.height + amount;
+//     return new Rectangle(rec.x, rec.y, newWidth, newHeight);
+//   }
 
-  /**
-   * findMidpoint(Point p1, Point p2)
-   * 
-   * Calculates the coordinates halfway between two points and returns
-   * a new Point2D.Double object at the average x, average y location.
-   * NOTE: use Point2D.Double middle = new Point2D.Double(x, y);
-   *
-   * @param p1 The first Point object.
-   * @param p2 The second Point object.
-   * @return A new Point2D.Double object located exactly between p1 and p2.
-   * 
-   *         Preconditions: p1 and p2 are not null.
-   *         Postconditions: p1 and p2 have not been changed. The method returns
-   *         a new Point with x at p1.x + p2.x / 2 and y at p1.y + p2.y / 2.
-   *         For example, the midpoint of (3,3) and (4,4) is (3.5, 3.5)
-   */
-  public static Point2D.Double findMidpoint(Point p1, Point p2) {
-    double midX = (p1.x + p2.x) / 2.0;
-    double midY = (p1.y + p2.y) / 2.0;
-    return new Point2D.Double(midX, midY);
-  }
+//   /**
+//    * isTouching(Point p1, Point p2, double minimumDistance)
+//    * 
+//    * Determines if two points are close enough to be considered "touching"
+//    * based on a specified threshold.
+//    *
+//    * @param p1              The first Point object.
+//    * @param p2              The second Point object.
+//    * @param minimumDistance The maximum distance allowed for the points to be
+//    *                        "touching."
+//    * @return true if the distance between p1 and p2 is less than or equal to
+//    *         minimumDistance; false otherwise.
+//    * 
+//    *         Preconditions: p1 and p2 are not null. minimumDistance is
+//    *         non-negative.
+//    *         Postconditions: p1 and p2 have not been changed.
+//    */
+//   public static boolean isTouching(Point p1, Point p2, double minimumDistance) {
+//     double distance = p1.distance(p2);
+//     return distance <= minimumDistance;
+//   }
 
-  public static void main(String[] args) {
-     // Check out the Rectangle class in the Java API:
-    // https://docs.oracle.com/javase/7/docs/api/index.html?java/awt/Rectangle.html
+//   /**
+//    * findMidpoint(Point p1, Point p2)
+//    * 
+//    * Calculates the coordinates halfway between two points and returns
+//    * a new Point2D.Double object at the average x, average y location.
+//    * NOTE: use Point2D.Double middle = new Point2D.Double(x, y);
+//    *
+//    * @param p1 The first Point object.
+//    * @param p2 The second Point object.
+//    * @return A new Point2D.Double object located exactly between p1 and p2.
+//    * 
+//    *         Preconditions: p1 and p2 are not null.
+//    *         Postconditions: p1 and p2 have not been changed. The method returns
+//    *         a new Point with x at p1.x + p2.x / 2 and y at p1.y + p2.y / 2.
+//    *         For example, the midpoint of (3,3) and (4,4) is (3.5, 3.5)
+//    */
+//   public static Point2D.Double findMidpoint(Point p1, Point p2) {
+//     double midX = (p1.x + p2.x) / 2.0;
+//     double midY = (p1.y + p2.y) / 2.0;
+//     return new Point2D.Double(midX, midY);
+//   }
 
-    // You will create ONE class with one public static void main() that contains
-    // code for the following 5 exercises.
+//   public static void main(String[] args) {
+//      // Check out the Rectangle class in the Java API:
+//     // https://docs.oracle.com/javase/7/docs/api/index.html?java/awt/Rectangle.html
 
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     // You will create ONE class with one public static void main() that contains
+//     // code for the following 5 exercises.
 
-    // Part 1 of 5
+//     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    // DONE: Write a program that:
+//     // Part 1 of 5
 
-    // Constructs a Rectangle object.
-    // Prompt the user for a width and height.
-    // Use the setSize method to adjust the width and height of your Rectangle
-    // object.
-    // Use the grow method to grow the width by 10 and grow the height by 10.
-    // For example... boxOne.grow(10,10);
-    // Print the new width using the getWidth method.
-    // Print the new height using the getHeight method.
-    // Finally, compute and print its new area using the getWidth and getHeight
-    // methods.
+//     // DONE: Write a program that:
 
-    System.out.println("Part 1 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     // Constructs a Rectangle object.
+//     // Prompt the user for a width and height.
+//     // Use the setSize method to adjust the width and height of your Rectangle
+//     // object.
+//     // Use the grow method to grow the width by 10 and grow the height by 10.
+//     // For example... boxOne.grow(10,10);
+//     // Print the new width using the getWidth method.
+//     // Print the new height using the getHeight method.
+//     // Finally, compute and print its new area using the getWidth and getHeight
+//     // methods.
 
-    Scanner sc = new Scanner(System.in);
-    Rectangle rect = new Rectangle();
-    System.out.println("Please enter the width and height of the rectangle as whole numbers");
-    System.out.print("Width: ");
-    int width = sc.nextInt();
-    System.out.print("Height: ");
-    int height = sc.nextInt();
-    rect.setSize(width, height);
-    rect.grow(10, 10);
-    System.out.println("After growing the width by 10 and the height by 10...");
-    System.out.println("New width is " + rect.getWidth());
-    System.out.println("New height is " + rect.getHeight());
-    System.out.println("New area is " + (rect.getWidth() * rect.getHeight()));
+//     System.out.println("Part 1 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    // Sample Output
+//     Scanner sc = new Scanner(System.in);
+//     Rectangle rect = new Rectangle();
+//     System.out.println("Please enter the width and height of the rectangle as whole numbers");
+//     System.out.print("Width: ");
+//     int width = sc.nextInt();
+//     System.out.print("Height: ");
+//     int height = sc.nextInt();
+//     rect.setSize(width, height);
+//     rect.grow(10, 10);
+//     System.out.println("After growing the width by 10 and the height by 10...");
+//     System.out.println("New width is " + rect.getWidth());
+//     System.out.println("New height is " + rect.getHeight());
+//     System.out.println("New area is " + (rect.getWidth() * rect.getHeight()));
 
-    // Part 1 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    // Please enter the width and height of the rectangle as whole numbers
-    // Width: 5
-    // Height: 6
-    // After growing the width by 10 and the height by 10...
-    // New width is 25.0
-    // New height is 26.0
-    // New area is 650.0
+//     // Sample Output
 
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     // Part 1 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     // Please enter the width and height of the rectangle as whole numbers
+//     // Width: 5
+//     // Height: 6
+//     // After growing the width by 10 and the height by 10...
+//     // New width is 25.0
+//     // New height is 26.0
+//     // New area is 650.0
 
-    // Part 2 of 5
+//     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    // Look into the API documentation of the Rectangle class and locate the method
+//     // Part 2 of 5
 
-    // boolean contains(int x, int y)
+//     // Look into the API documentation of the Rectangle class and locate the method
 
-    // DONE: Construct a new Rectangle named mysteryBox at any x,y location (your choice!)
-    // with a width of 20 and a height of 30.
+//     // boolean contains(int x, int y)
 
-    // Prompt the user for an x location
-    // Prompt the user for a y location
-    // Print mysteryBox.contains(x,y)
-    // Finally, print mysteryBox to reveal the x, y, width, and height
+//     // DONE: Construct a new Rectangle named mysteryBox at any x,y location (your choice!)
+//     // with a width of 20 and a height of 30.
 
-    System.out.println("Part 2 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     // Prompt the user for an x location
+//     // Prompt the user for a y location
+//     // Print mysteryBox.contains(x,y)
+//     // Finally, print mysteryBox to reveal the x, y, width, and height
 
-    Rectangle mysteryBox = new Rectangle(9, 10, 20, 30);
-    System.out.println("Please type x location: ");
-    int x = sc.nextInt();
-    System.out.println("Please type y location: ");
-    int y = sc.nextInt();
-    System.out.println(mysteryBox.contains(x, y));
-    System.out.println(mysteryBox);
+//     System.out.println("Part 2 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    // Sample Output (your mysteryBox should be at a different location)
+//     Rectangle mysteryBox = new Rectangle(9, 10, 20, 30);
+//     System.out.println("Please type x location: ");
+//     int x = sc.nextInt();
+//     System.out.println("Please type y location: ");
+//     int y = sc.nextInt();
+//     System.out.println(mysteryBox.contains(x, y));
+//     System.out.println(mysteryBox);
 
-    // Part 2 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    // Please type x location: 15
-    // Please type y location: 17
-    // true
-    // java.awt.Rectangle[x=9,y=10,width=20,height=30]
+//     // Sample Output (your mysteryBox should be at a different location)
 
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     // Part 2 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     // Please type x location: 15
+//     // Please type y location: 17
+//     // true
+//     // java.awt.Rectangle[x=9,y=10,width=20,height=30]
 
-    // Part 3 of 5
+//     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    // Double the height and width.
+//     // Part 3 of 5
 
-    // DONE: Construct a Rectangle object named doubleSquare representing a square with
-    // top-left corner (100, 100) and side length 50, then print its location by
-    // calling System.out.println(doubleSquare). Use the translate and grow methods
-    // to make the square twice the size and move it to location (300,400). Finally,
-    // call System.out.println(doubleSquare) again.
+//     // Double the height and width.
 
-    // This code will not produce a drawing. It will simply print the locations of
-    // square before and after calling the mutator methods.
+//     // DONE: Construct a Rectangle object named doubleSquare representing a square with
+//     // top-left corner (100, 100) and side length 50, then print its location by
+//     // calling System.out.println(doubleSquare). Use the translate and grow methods
+//     // to make the square twice the size and move it to location (300,400). Finally,
+//     // call System.out.println(doubleSquare) again.
 
-    // Look up the description of the grow method in the API documentation.
+//     // This code will not produce a drawing. It will simply print the locations of
+//     // square before and after calling the mutator methods.
 
-    System.out.println("Part 3 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     // Look up the description of the grow method in the API documentation.
 
-    Rectangle doubleSquare = new Rectangle(100, 100, 50, 50);
-    System.out.println(doubleSquare);
-    doubleSquare.grow(25, 25);
-    doubleSquare.translate(225, 325);
-    System.out.println(doubleSquare);
+//     System.out.println("Part 3 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     Rectangle doubleSquare = new Rectangle(100, 100, 50, 50);
+//     System.out.println(doubleSquare);
+//     doubleSquare.grow(25, 25);
+//     doubleSquare.translate(225, 325);
+//     System.out.println(doubleSquare);
 
-    // Part 4 of 5
+//     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    // Halve the width only.
+//     // Part 4 of 5
 
-    // DONE: Construct a Rectangle object named halfWidthSquare representing a square with
-    // top-left corner (55, 55) and side length 600, then print its location by
-    // calling System.out.println(halfWidthSquare). Use the translate and grow
-    // methods to make the square half the width and move it to location (55,0).
-    // Finally, call System.out.println(halfWidthSquare) again.
+//     // Halve the width only.
 
-    // This code will not produce a drawing. It will simply print the locations of
-    // square before and after calling the mutator methods. Look up the description
-    // of the grow method in the API documentation.
+//     // DONE: Construct a Rectangle object named halfWidthSquare representing a square with
+//     // top-left corner (55, 55) and side length 600, then print its location by
+//     // calling System.out.println(halfWidthSquare). Use the translate and grow
+//     // methods to make the square half the width and move it to location (55,0).
+//     // Finally, call System.out.println(halfWidthSquare) again.
 
-    System.out.println("Part 4 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     // This code will not produce a drawing. It will simply print the locations of
+//     // square before and after calling the mutator methods. Look up the description
+//     // of the grow method in the API documentation.
 
-    Rectangle halfWidthSquare = new Rectangle(55, 55, 600, 600);
-    System.out.println(halfWidthSquare);
-    halfWidthSquare.grow(-150, 0);
-    halfWidthSquare.translate(-150, -55);
-    System.out.println(halfWidthSquare);
+//     System.out.println("Part 4 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+//     Rectangle halfWidthSquare = new Rectangle(55, 55, 600, 600);
+//     System.out.println(halfWidthSquare);
+//     halfWidthSquare.grow(-150, 0);
+//     halfWidthSquare.translate(-150, -55);
+//     System.out.println(halfWidthSquare);
     
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    // Part 5 of 5
+//     // Part 5 of 5
 
-    // https://docs.oracle.com/javase/7/docs/api/java/awt/Point.html
+//     // https://docs.oracle.com/javase/7/docs/api/java/awt/Point.html
 
-    // Look at the API of the Point class and find out how to construct a Point
-    // object.
-    // DONE: Construct two points with coordinates (3, 4) and (–3, –4). Find the distance
-    // between them, using the distance method (which is available because it is
-    // inherited from a different class). Print your prediction and then the
-    // calculated distance.
+//     // Look at the API of the Point class and find out how to construct a Point
+//     // object.
+//     // DONE: Construct two points with coordinates (3, 4) and (–3, –4). Find the distance
+//     // between them, using the distance method (which is available because it is
+//     // inherited from a different class). Print your prediction and then the
+//     // calculated distance.
 
-    System.out.println("Part 5 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     System.out.println("Part 5 of 5 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    Point p1 = new Point(3, 4);
-    Point p2 = new Point(-3, -4);
-    System.out.println("Prediction: The distance is 10.0");
-    System.out.println("Calculated distance: " + p1.distance(p2));
-    sc.close();
-  }
-}
+//     Point p1 = new Point(3, 4);
+//     Point p2 = new Point(-3, -4);
+//     System.out.println("Prediction: The distance is 10.0");
+//     System.out.println("Calculated distance: " + p1.distance(p2));
+//     sc.close();
+//   }
+// }
