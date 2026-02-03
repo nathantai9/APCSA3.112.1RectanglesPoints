@@ -459,7 +459,7 @@ public class RectanglesPoints {
         int h = input.nextInt();
 
         // Use the Rectangle class setSize method to adjust the width and height of userBox
-        // DONEa
+        // DONE
         userBox.setSize(h, w);
         System.out.println("\nHere is your Rectangle");
         // Print the userBox to reveal where it is located
@@ -471,7 +471,7 @@ public class RectanglesPoints {
         // Notice that there are multiple versions of the contains method
         // Use the Rectangle class contains method to see if the mysterySpot is within userBox
         // Store what the contains method returns in the variable isCaught
-        //DONE isCaught = ???
+        // DONE isCaught = ???
         isCaught = userBox.contains(mysterySpot);
         if(isCaught == true){
             System.out.println("\nYou win!\n");
