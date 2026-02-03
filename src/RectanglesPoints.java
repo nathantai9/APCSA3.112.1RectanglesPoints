@@ -352,7 +352,8 @@ public class RectanglesPoints {
     System.out.println("\nLocation (11,12) is the new location of box2");
 
     // Use the Rectangle class setLocation method to move it to 5 on the x-axis and 5 on the y-axis
-    // TODO
+    // DONE
+    box2.setLocation(5, 5);
 
     System.out.println("\nGuess where box2 will be located after setLocation(5,5)");
     System.out.print("Guess the new x-location as a whole number: ");
@@ -361,10 +362,11 @@ public class RectanglesPoints {
     yLocationGuess = input.nextInt();
 
     // Use the user input to construct a new Point object named userGuess2
-    // TODO Point userGuess2 = ???
-
+    // DONE Point userGuess2 = ???
+    Point userGuess2 = new Point(xLocationGuess, yLocationGuess);
     // using the Rectangle class getLocation method to get the new x,y coordinates as a Point object named setLocationPoint
-    // TODO Point setLocationPoint = ???
+    // DONE Point setLocationPoint = ???
+    Point setLocationPoint = box2.getLocation();
 
     if(isTouching(setLocationPoint, userGuess2, 0.1) == true){
         System.out.println("\nYou win!\n");
@@ -386,8 +388,8 @@ public class RectanglesPoints {
     System.out.println("\nbox2 is currently width 10 and height 10");
 
     // Use the Rectangle class grow method to grow it by 1 horizontally and 1 vertically
-    // TODO
-
+    // DONE
+    box2.grow(1, 1);
     System.out.println("Guess what the width of box2 will be after grow(1, 1)");
     System.out.print("Guess the new width as a whole number: ");
     int widthGuess = input.nextInt();
@@ -433,8 +435,10 @@ public class RectanglesPoints {
     System.out.println("Try to catch the mystery point within your Rectangle!");
 
     // Constuct a Point object named mysterySpot with a random x 0-10, and a random y 0-10 use Math.random
-    // TODO Point mysterySpot = ???
-
+    // DONE Point mysterySpot = ???
+    int mysteryX = (int)(Math.random() * 11);
+    int mysteryY = (int)(Math.random() * 11);
+    Point mysterySpot = new Point(mysteryX, mysteryY);
     // Loop until the game is over or the user wants to quit
     while(true){
         System.out.println("\n• • • • • • • • • •");
@@ -445,8 +449,8 @@ public class RectanglesPoints {
         yLocationGuess = input.nextInt();
 
         // Construct a Rectangle object named userBox.
-        // TODO Rectangle userBox = ???
-
+        // DONE Rectangle userBox = ???
+        Rectangle userBox = new Rectangle (xLocationGuess, yLocationGuess, 1, 1);
         System.out.println("\nPlease enter the width and height of your Rectangle");
         // Prompt the user for width and height.
         System.out.print("Give me the width as a whole number 0-10: ");
@@ -455,8 +459,8 @@ public class RectanglesPoints {
         int h = input.nextInt();
 
         // Use the Rectangle class setSize method to adjust the width and height of userBox
-        // TODO
-
+        // DONEa
+        userBox.setSize(h, w);
         System.out.println("\nHere is your Rectangle");
         // Print the userBox to reveal where it is located
         System.out.println(userBox);
@@ -467,8 +471,8 @@ public class RectanglesPoints {
         // Notice that there are multiple versions of the contains method
         // Use the Rectangle class contains method to see if the mysterySpot is within userBox
         // Store what the contains method returns in the variable isCaught
-        //TODO isCaught = ???
-
+        //DONE isCaught = ???
+        isCaught = userBox.contains(mysterySpot);
         if(isCaught == true){
             System.out.println("\nYou win!\n");
             break; // break out of the forever loop
@@ -496,8 +500,10 @@ public class RectanglesPoints {
     System.out.println("Try to guess a point within the box!");
 
     // Constuct a Rectangle object named secretBox with any x location, any y location, a width of 30, and height of 20
-    // TODO Rectangle secretBox = ???
-
+    // DONE Rectangle secretBox = ???
+    int secretX = (int)(Math.random() *  (11 - 0 + 1)) + 0;
+    int secretY = (int)(Math.random() *  (11 - 0 + 1)) + 0;
+    Rectangle secretBox = new Rectangle (secretX, secretY, 30, 20);
     // Loop until the game is over or the user wants to quit
     while(true){
         System.out.println("\n☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐");
@@ -519,8 +525,8 @@ public class RectanglesPoints {
         // Notice that there are multiple versions of the contains method
         // Use the Rectangle class contains method to see if the userGuess is within secretBox
         // Store what the contains method returns in the variable isCaught
-        // TODO isCaught = ???
-
+        // DONE isCaught = ???
+        isCaught = secretBox.contains(userGuess);
         if(isCaught == true){
             System.out.println("\nYou win!\n");
             break; // break out of the forever loop
