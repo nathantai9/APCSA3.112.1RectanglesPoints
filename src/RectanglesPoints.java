@@ -250,13 +250,13 @@ public class RectanglesPoints {
 
     // use the static class method calculateArea to calculate the area and save in a variable named areaOfBox1
     // DONE ??? = ???
-    int areaOfBox1 = (int) calculateArea(box1);
+    double areaOfBox1 = (double) calculateArea(box1);
     System.out.println("\nGuess the area of box1!");
     System.out.print("Type a whole number: ");
 
     // collect user input and save it in a variable named areaGuess
     // DONE ??? = input.nextInt();
-    int areaGuess = input.nextInt();
+    double areaGuess = input.nextInt();
     if(areaOfBox1 == areaGuess){
         System.out.println("\nYou win!\n");
     } else {
@@ -287,7 +287,7 @@ public class RectanglesPoints {
 
     // collect user input and save it in a variable named areaGuess
     // DONE ??? = ???
-    areaGuess = input.nextInt();
+    areaGuess = input.nextDouble();
     if(areaOfBox1 == areaGuess){
         System.out.println("\nYou win!\n");
     } else {
